@@ -1,0 +1,19 @@
+# Generated data and local execution state
+__pycache__/
+*.pyc
+.DS_Store
+*.out
+*.err
+*.log
+*.bam
+*.bai
+*.fastq
+*.fastq.gz
+*.fa
+*.fna
+*.fasta
+*.gz
+*.dmnd
+*.h5
+results/
+logs/
