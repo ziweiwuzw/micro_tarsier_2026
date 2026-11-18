@@ -1,6 +1,6 @@
 # Table 1. Software and main parameters
 
-This table lets readers find the main settings without opening the scripts. Thread counts are per job. The four focal samples were analysed with CCMetagen after fastp cleaning, without host read removal.
+This table lets readers find the main settings without opening the scripts. Thread counts are per job.
 
 | Stage | Software (version) | Purpose | Main settings |
 | --- | --- | --- | --- |
