@@ -25,7 +25,7 @@ This table lets readers find the main settings without opening the scripts. Thre
 | DRAM2 execution | Apptainer (1.3.3) | Run DRAM2 containers | Used through the Nextflow Apptainer profile. |
 | CAZyme annotation | dbCAN (5.2.9) | Assign CAZyme families | Protein mode; DIAMOND, HMM and dbCANsub; 8 threads per MAG. A family enters the selected SGB table when two methods support it. |
 | Virulence and toxin screening | DIAMOND (2.2.8) | Search VFDB and Toxinome | VFDB: `blastp --very-sensitive`, identity and both coverages ≥70%, E ≤10⁻¹⁰. Toxinome: `blastp --sensitive`, identity ≥40%, query coverage ≥90%, subject coverage ≥60%, E ≤0.001. Both: ≤25 targets and 8 threads per MAG. |
-| Iron metabolism | FeGenie (version not recorded) | Find iron uptake, regulation, oxidation, reduction and storage genes | Metagenome mode (`--meta`); 4 threads per MAG job. |
-| Host gene families | CAFE5 (version not recorded) | Test expansion and contraction of primate gene families | Gamma model with three rate categories; significant branch changes at P ≤0.05. |
+| Iron metabolism | FeGenie| Find iron uptake, regulation, oxidation, reduction and storage genes | Metagenome mode (`--meta`); 4 threads per MAG job. |
+| Host gene families | CAFE5 | Test expansion and contraction of primate gene families | Gamma model with three rate categories; significant branch changes at P ≤0.05. |
 
 FeGenie and CAFE5 version numbers were not recorded in the supplied parameter list.
