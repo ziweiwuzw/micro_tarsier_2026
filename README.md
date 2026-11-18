@@ -17,5 +17,3 @@ These scripts accompany the Materials and Methods of our primate metagenome stud
 These scripts were written for a Slurm cluster. Paths marked `/path/to/` are placeholders. Set them to your input, reference database, Conda and output locations before running the scripts. Set `SBATCH_ACCOUNT` and the Slurm partition for your cluster. Raw reads, reference databases and analysis outputs are not included.
 
 For example, set `PROJECT_DIR` and `CONDA_SH` before `01_reads_qc_host/process_reads_fastp.sh`. To build the assembly manifest, pass `--assembly-root`, one or more `--read-root` values, and `--output` to `02_assembly_binning/prepare_sample_manifest.py`.
-
-The four focal samples also have a CCMetagen branch in `01_reads_qc_host/ccmetagen/`. That branch uses fastp-cleaned reads without host read removal. For COMEBin, `submit_comebin.sh` runs CPU jobs with 64 threads and eight workers; missing same-species BAMs are made with Strobealign.
