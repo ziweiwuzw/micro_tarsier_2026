@@ -7,7 +7,7 @@ This table lets readers find the main settings without opening the scripts. Thre
 | Read cleaning | fastp (0.22.0) | Remove adapters and low-quality reads | Paired-end adapter detection; Phred ≥25; ≤40% low-quality bases; ≤3 ambiguous bases; read length ≥36 bp; 12 threads. |
 | Host removal | BWA-MEM (0.7.17) | Align reads to the host reference | `bwa mem -t 24`. |
 | Host removal | SAMtools (1.21) | Keep pairs with neither mate mapped | `collate -u -O`; `fastq -f 12 -F 0x900 -n`; 8 threads. |
-| Focal sample taxonomy | KMA and CCMetagen (versions not recorded for this branch) | Classify fastp-cleaned reads against NCBI nt | KMA `-ipe -1t1 -mem_mode -and -apm p -ef`; 48 threads. CCMetagen processes the KMA results. No host read removal in this branch. |
+| Focal sample taxonomy | KMA  | Classify fastp-cleaned reads against NCBI nt | KMA `-ipe -1t1 -mem_mode -and -apm p -ef`; 48 threads. |
 | Assembly | MEGAHIT (1.2.9) | Assemble each sample | Paired reads (`-1`, `-2`); `--min-contig-len 1000`; 32 threads. |
 | Coverage | Strobealign (0.17.0) | Map reads to assembled contigs | Read-length profile (`-r`); `-R 6`; profile-specific index. Host-group jobs used 24 mapping threads; COMEBin mapping used 56. |
 | Coverage | SAMtools (1.24) | Produce sorted BAM files | Exclude unmapped reads (`-F 4`); coordinate sort and index. Host-group jobs used 4 threads; COMEBin sorting used 8. |
