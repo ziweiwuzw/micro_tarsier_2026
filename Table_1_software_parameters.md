@@ -9,8 +9,8 @@ This table lets readers find the main settings without opening the scripts. Thre
 | Host removal | SAMtools (1.21) | Keep pairs with neither mate mapped | `collate -u -O`; `fastq -f 12 -F 0x900 -n`; 8 threads. |
 | Focal sample taxonomy | KMA and CCMetagen (versions not recorded for this branch) | Classify fastp-cleaned reads against NCBI nt | KMA `-ipe -1t1 -mem_mode -and -apm p -ef`; 48 threads. CCMetagen processes the KMA results. No host read removal in this branch. |
 | Assembly | MEGAHIT (1.2.9) | Assemble each sample | Paired reads (`-1`, `-2`); `--min-contig-len 1000`; 32 threads. |
-| Coverage | Strobealign (0.17.0) | Map reads to assembled contigs | Read-length profile (`-r`); `-R 6`; profile-specific index; 24 mapping threads. |
-| Coverage | SAMtools (1.24) | Produce sorted BAM files | Exclude unmapped reads (`-F 4`); coordinate sort and index; 4 threads. |
+| Coverage | Strobealign (0.17.0) | Map reads to assembled contigs | Read-length profile (`-r`); `-R 6`; profile-specific index. Host-group jobs used 24 mapping threads; COMEBin mapping used 56. |
+| Coverage | SAMtools (1.24) | Produce sorted BAM files | Exclude unmapped reads (`-F 4`); coordinate sort and index. Host-group jobs used 4 threads; COMEBin sorting used 8. |
 | Host-group binning | SemiBin2 (2.4.1) | Recover bins from host-group contigs | `multi_easy_bin --self-supervised`. |
 | Host-group binning | VAMB (5.0.4) | Recover bins from host-group contigs | `vamb bin default`. |
 | Per-sample binning | COMEBin (1.1.0) | Bin each sample using same-species coverage | Contigs ≥2 kb; Strobealign BAMs; `-n 6 -d cpu -t 64 -s 42 -w 8`. |
